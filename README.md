@@ -1,6 +1,7 @@
 # CS2225.CH1801.N014
 
-by Bùi Tổng Nha - CH1801033 và Châu Ngọc Long Giang - CH1801026
+by [Bùi Tổng Nha - CH1801033](https://github.com/nhabt-uit/CS2225.CH1801.N014/tree/NhaBT) và [Châu Ngọc Long Giang - CH1801026](https://github.com/nhabt-uit/CS2225.CH1801.N014/tree/Giangcnl)
+
 
 1. Dataset<br>
 Bộ dataset được lấy từ German Traffic Sign Benchmark. Link:http://kaggle.com/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign<br>
