@@ -16,7 +16,7 @@ import cv2
 import tensorflow as tf
 from PIL import Image
 import os
-os.chdir('/content/drive/My Drive/VRA - Self Driving Cars')
+os.chdir('/content/drive/My Drive/VRA-CS2225.CH1801.N014')
 from sklearn.model_selection import train_test_split
 from keras.utils import to_categorical
 from keras.models import Sequential, load_model
@@ -33,7 +33,7 @@ classes = 5
 cur_path = os.getcwd()
 
 for i in range(classes):
-    path = os.path.join(cur_path,'/content/drive/My Drive/VRA - Self Driving Cars/vra/train',str(i))
+    path = os.path.join(cur_path,'/content/drive/My Drive/VRA-CS2225.CH1801.N014/vra/train',str(i))
     images = os.listdir(path)
     for a in images:
         try:
@@ -82,9 +82,9 @@ Có độ chính xác 94,91% trên bộ thử nghiệm.
 ###Load the Model
 ```sh
 import os
-os.chdir(r'/content/drive/My Drive/VRA - Self Driving Cars/')
+os.chdir(r'/content/drive/My Drive/VRA-CS2225.CH1801.N014/')
 from keras.models import load_model
-model = load_model('/content/drive/My Drive/VRA - Self Driving Cars/vra/NhaModelVRA.h5')
+model = load_model('/content/drive/My Drive/VRA-CS2225.CH1801.N014/vra/NhaModelVRA.h5')
 
 # Classes of trafic signs
 classes = { 0:'Biển báo giới hạn tốc độ (20km/h)',
@@ -106,7 +106,7 @@ def test_on_img(img):
     Y_pred = model.predict_classes(X_test)
     return image,Y_pred
     
-plot,prediction = test_on_img(r'/content/drive/My Drive/VRA - Self Driving Cars/vra/test/01695.png')
+plot,prediction = test_on_img(r'/content/drive/My Drive/VRA-CS2225.CH1801.N014/vra/test/01695.png')
 s = [str(i) for i in prediction] 
 a = int("".join(s)) 
 print("Kết quả: ", classes[a])
