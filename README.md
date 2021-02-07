@@ -78,3 +78,43 @@ model.add(Dense(43, activation='softmax'))
 
 7. Độ chính xác trên bộ thử nghiệm<br>
 Có độ chính xác 94,91% trên bộ thử nghiệm.
+
+###Load the Model
+```sh
+import os
+os.chdir(r'/content/drive/My Drive/VRA - Self Driving Cars/')
+from keras.models import load_model
+model = load_model('/content/drive/My Drive/VRA - Self Driving Cars/vra/NhaModelVRA.h5')
+
+# Classes of trafic signs
+classes = { 0:'Biển báo giới hạn tốc độ (20km/h)',
+            1:'Biển báo dừng', 
+            2:'Biển báo hiệu đèn xanh đèn đỏ', 
+            3:'Biển báo lệnh đi thẳng', 
+            4:'Biển báo vòng xoay', 
+            5:'Biển báo cấm xe tải vượt',  }
+            
+from PIL import Image
+import numpy as np
+import matplotlib.pyplot as plt
+def test_on_img(img):
+    data=[]
+    image = Image.open(img)
+    image = image.resize((30,30))
+    data.append(np.array(image))
+    X_test=np.array(data)
+    Y_pred = model.predict_classes(X_test)
+    return image,Y_pred
+    
+plot,prediction = test_on_img(r'/content/drive/My Drive/VRA - Self Driving Cars/vra/test/01695.png')
+s = [str(i) for i in prediction] 
+a = int("".join(s)) 
+print("Kết quả: ", classes[a])
+plt.imshow(plot)
+plt.show()
+
+Kết quả:  Biển báo hiệu đèn xanh đèn đỏ
+/usr/local/lib/python3.6/dist-packages/tensorflow/python/keras/engine/sequential.py:450: UserWarning: `model.predict_classes()` is deprecated and will be removed after 2021-01-01. Please use instead:* `np.argmax(model.predict(x), axis=-1)`,   if your model does multi-class classification   (e.g. if it uses a `softmax` last-layer activation).* `(model.predict(x) > 0.5).astype("int32")`,   if your model does binary classification   (e.g. if it uses a `sigmoid` last-layer activation).
+  warnings.warn('`model.predict_classes()` is deprecated and '
+
+```
