@@ -5,6 +5,7 @@ by [Bùi Tổng Nha - CH1801033](https://github.com/nhabt-uit/CS2225.CH1801.N014
 
 1. Dataset<br>
 Bộ dataset được lấy từ German Traffic Sign Benchmark. Link: http://kaggle.com/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign<br>
+Link dataset của nhóm: https://drive.google.com/drive/folders/1O2LvcBCPQGXm986RUzd-4MDDX-Lrgf6A?usp=sharing
 
 2. Import các thư viện cần thiết cho chương trình<br>
 Đầu tiên nhập các thư viện cần thiết như keras để xây dựng mô hình chính, sklearn để tách dữ liệu đào tạo và kiểm tra, PIL để chuyển đổi hình ảnh thành mảng số và các thư viện khác như pandas, numpy , matplotlib và tensorflow.
