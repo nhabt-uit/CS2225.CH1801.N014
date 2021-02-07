@@ -118,3 +118,4 @@ Kết quả:  Biển báo hiệu đèn xanh đèn đỏ
   warnings.warn('`model.predict_classes()` is deprecated and '
 
 ```
+<img src="https://raw.githubusercontent.com/nhabt-uit/CS2225.CH1801.N014/NhaBT/download.png">
